@@ -1,15 +1,18 @@
 {
-  "name": "flow-chart",
+  "name": "react-flow-chart",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-		"build": "rollup --config"
+    "watch": "rollup --config --watch",
+    "build": "rollup --config"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-terser": "^0.4.4",
     "rollup": "^4.18.0"
   }
 }
