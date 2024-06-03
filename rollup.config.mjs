@@ -1,9 +1,10 @@
 // rollup.config.mjs
 import json from '@rollup/plugin-json';
 import terser from '@rollup/plugin-terser';
+import babel from '@rollup/plugin-babel';
 
 export default {
-	input: 'src/main.js',
+	input: 'src/main.jsx',
 	output: [{
 		file: 'dist/bundle.js',
 		format: 'cjs'
@@ -13,5 +14,11 @@ export default {
 		name: 'version',
 		plugins: [terser()]
 	}],
-	plugins: [json()]
+	plugins: [
+		json(),
+		babel({
+			presets: ['@babel/preset-react'],
+			extensions: ['.js', '.jsx']
+		})
+	]
 };
